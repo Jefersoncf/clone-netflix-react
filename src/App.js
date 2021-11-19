@@ -1,11 +1,18 @@
+import './app.css';
 import './netflix.css';
 
 import Logo from './assets/img/logo.png';
-import Motivo_1 from './assets/img/motivo-1.png';
-import Motivo_2 from './assets/img/motivo-2.png';
+import MotivoOne from './assets/img/motivo-1.png';
+import MotivoTwo from './assets/img/motivo-2.png';
+import Button from './components/Button';
+import Section from './components/Section';
+import Card from './components/Card';
+import MOTIVOS from './constants/motivos';
 
-
-function App() {
+export default function App() {
+  const Title = <h1>Titulo</h1>;
+  const isLogin = true;
+  const idioma = 'PT';
 
   return (  
   <div>
@@ -18,7 +25,9 @@ function App() {
         <option value="PT">Português</option>
         <option value="ING">Ingles</option>
       </select>
-      <button>Entrar</button>
+      <Button text="Entrar" variante="sucesso">
+        TESTE CHILDREN
+      </Button>
     </div>
   </header>
   <section id="banner">
@@ -31,67 +40,45 @@ function App() {
       >Pronto para assistir? Informe seu email para criar ou reiniciar sua
       assinatura.
     </small>
+    <Card title="">
+      <h1>Teste children</h1>
+    </Card>
     <div>
       <input type="email" placeholder="Email" />
-      <button>Vamos Lá</button>
+      <Button text="Vamos lá" variant="alerta"/>
     </div>
   </section>
   <hr className="divisor" />
-  <section className="motivos">
-    <div>
-      <h1>Aproveite na TV.</h1>
-      <p>
-        Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-        aparelhos de Blu-ray e outros dispositivos.
-      </p>
-    </div>
-    <div>
-      <img src={Motivo_1} alt="Motivo 1" />
-    </div>
-  </section>
+  <Section
+  title={MOTIVOS[idioma].ONE.TITLE}
+  description={MOTIVOS[idioma].ONE.DESCRIPTION}
+  image={MotivoOne}/>
+   
   <hr className="divisor" />
-  <section className="motivos alterna">
-    <div>
-      <h1>Aproveite na TV.</h1>
-      <p>
-        Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-        aparelhos de Blu-ray e outros dispositivos.
-      </p>
-    </div>
-    <div>
-      <img src={Motivo_2} alt="Motivo 1" />
-    </div>
-  </section>
+  <Section
+  title={MOTIVOS[idioma].ONE.TITLE}
+  description={MOTIVOS[idioma].ONE.DESCRIPTION}
+  image={MotivoTwo}
+  alterna={true}/>
+   
   <hr className="divisor" />
-  <section className="motivos">
-    <div>
-      <h1>Aproveite na TV.</h1>
-      <p>
-        Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-        aparelhos de Blu-ray e outros dispositivos.
-      </p>
-    </div>
-    <div>
-      <img src={Motivo_1} alt="Motivo 1" />
-    </div>
-  </section>
+  <Section
+  title={MOTIVOS[idioma].ONE.TITLE}
+  description={MOTIVOS[idioma].ONE.DESCRIPTION}
+  image={MotivoOne}/>
+   
   <hr className="divisor" />
-  <section className="motivos alterna">
-    <div>
-      <h1>Aproveite na TV.</h1>
-      <p>
-        Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-        aparelhos de Blu-ray e outros dispositivos.
-      </p>
-    </div>
-    <div>
-      <img src={Motivo_1} alt="Motivo 1" />
-    </div>
-  </section>
+  <Section
+  title={MOTIVOS[idioma].ONE.TITLE}
+  description={MOTIVOS[idioma].ONE.DESCRIPTION}
+  image={MotivoOne}/>
+   
   <hr className="divisor" />
-</div>
-  )
 
+  <div>
+    <h1>test</h1>
+  </div>
+</div>
+  );
 }
 
-export default App;
