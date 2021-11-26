@@ -1,0 +1,10 @@
+.filme{
+    max-width: 120px;
+}
+.filme .poster {
+    width: 100%;
+}
+.filme .specs {
+    display: flex;
+    justify-content: space-between;
+}
